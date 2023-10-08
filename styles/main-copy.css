@@ -1,11 +1,19 @@
 @import "./Reset.css"; 
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@400;700&family=Roboto:wght@300&family=Shantell+Sans:wght@300&display=swap'); 
-@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&family=Playfair+Display:wght@700&family=Roboto&family=Rubik:wght@400;700&display=swap');
 
 /* font-family: 'DM Sans', sans-serif;
 font-family: 'Poppins', sans-serif;
 font-family: 'Roboto', sans-serif;
 font-family: 'Shantell Sans', cursive; */ 
+
+/* 
+font-family: 'Montserrat', sans-serif;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Playfair Display', serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Rubik', sans-serif;
+*/
 
 :root {
   --black: #0c0c0c; 
@@ -338,48 +346,38 @@ html, body {
   min-height: 100vh; 
   background-color: var(--gallery-bg-color); 
   padding: 30px 30px;
-  max-width: 1100px;
+  max-width: 90%;
 }
 
 .gallery {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(250px, 1fr));
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center;
   gap: 20px;
   padding: 20px;
 }
 
 .gallery-item {
-  position: relative;
+  display: flex; 
+  justify-content: space-between;
+  align-items: center; 
+  gap: 50px;
   border-radius: 10px;
   overflow: hidden; 
   animation: fadeIn 1s ease-in-out; 
 }
 
 .gallery-item img {
-  display: block;
-  width: 100%;
+  display: inline-block;
+  width: 350px;
   height: auto; 
-  border-radius: 10px;
-  transition: opacity 0.3s ease-in;
-}
-
-.gallery-item:hover img {
-  opacity: 0.8;
+  border-radius: 10px; 
 }
 
 .gallery-item-description {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-  color: var(--gallery-pictures-description);
-  padding: 10px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  opacity: 0;
-  transform: translateY(100%);
-  transition: opacity 0.3s ease-in, transform 0.3s ease-in;
+  display: inline-block; 
+  max-width: 600px;
 }
 
 .gallery-item:hover .gallery-item-description {
@@ -389,12 +387,15 @@ html, body {
 
 .gallery-item-description h3 {
   margin: 0;
-  font-size: 18px;
+  font-size: 24px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .gallery-item-description p {
   margin: 5px 0 0;
-  font-size: 14px;
+  font-size: 18px; 
+  text-align: justify;
+  font-family: 'Open Sans', sans-serif;
 }
 
 
@@ -420,7 +421,6 @@ html, body {
   font-size: 36px;
   font-weight: bold;
   text-align: center;
-  font-family: 'Rubik', sans-serif; 
   margin-bottom: 30px; 
   color: var(--accent);
 }
